@@ -1,0 +1,15 @@
+{
+    "name": "hexlet/code",
+    "description": "Set of simple CLI games.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitry Plotnikov",
+            "email": "dmplotn@gmail.com"
+        }
+    ],
+    "require": {},
+    "bin": [
+        "bin/brain-games"
+    ]
+}
