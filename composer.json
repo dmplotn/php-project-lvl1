@@ -13,5 +13,10 @@
     },
     "bin": [
         "bin/brain-games"
-    ]
+    ],
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+        ]
+    }
 }
