@@ -29,7 +29,7 @@ function runGameFlow($gameDescription, $roundsData, $isCorrectPlayerAnswer)
 
 function getRoundsData($getRoundData, $roundsCount)
 {
-    return array_map($getRoundData, array_fill(0, 3, null));
+    return array_map($getRoundData, array_fill(0, $roundsCount, null));
 }
 
 function runGameEngine($gameDescription, $getRoundData, $roundsCount, $isCorrectPlayerAnswer)
