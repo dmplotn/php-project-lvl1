@@ -16,7 +16,6 @@ function isEven($num)
 
 function isCorrectPlayerAnswer($playerAnswer, $correctAnswer)
 {
-    var_dump($playerAnswer === $correctAnswer);
     return $playerAnswer === $correctAnswer;
 }
 
