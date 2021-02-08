@@ -5,8 +5,11 @@ namespace Brain\Games\GameEngine;
 use function cli\line;
 use function cli\prompt;
 
-function runGameFlow($gameDescription, $roundsData, $isCorrectPlayerAnswer)
-{
+function runGameFlow(
+    string $gameDescription,
+    array $roundsData,
+    callable $isCorrectPlayerAnswer
+): void {
     line('Welcome to the Brain Games!');
     $playerName = prompt('May I have your name?');
     line("Hello, {$playerName}!");
@@ -27,13 +30,17 @@ function runGameFlow($gameDescription, $roundsData, $isCorrectPlayerAnswer)
     line("Congratulations, {$playerName}!");
 }
 
-function getRoundsData($getRoundData, $roundsCount)
+function getRoundsData(callable $getRoundData, int $roundsCount): array
 {
     return array_map($getRoundData, array_fill(0, $roundsCount, null));
 }
 
-function runGameEngine($gameDescription, $getRoundData, $roundsCount, $isCorrectPlayerAnswer)
-{
+function runGameEngine(
+    string $gameDescription,
+    callable $getRoundData,
+    int $roundsCount,
+    callable $isCorrectPlayerAnswer
+): void {
     $roundsData = getRoundsData($getRoundData, $roundsCount);
     runGameFlow($gameDescription, $roundsData, $isCorrectPlayerAnswer);
 }

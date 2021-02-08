@@ -12,7 +12,7 @@ const MAX_START_VALUE = 100;
 const MIN_STEP_VALUE = 2;
 const MAX_STEP_VALUE = 10;
 
-function getProgression($start, $step, $length)
+function getProgression(int $start, int $step, int $length): array
 {
     $progression = [];
 
@@ -23,7 +23,7 @@ function getProgression($start, $step, $length)
     return $progression;
 }
 
-function getProgressionWithSecretAsStr($progression, $secretIndex)
+function getProgressionWithSecretAsStr(array $progression, int $secretIndex): string
 {
     if ($secretIndex < 0 || $secretIndex > count($progression) - 1) {
         throw new \Exception("Unknown index: {$secretIndex}");
@@ -38,12 +38,12 @@ function getProgressionWithSecretAsStr($progression, $secretIndex)
     return implode(' ', $result);
 }
 
-function isCorrectPlayerAnswer($playerAnswer, $correctAnswer)
+function isCorrectPlayerAnswer(string $playerAnswer, int $correctAnswer): bool
 {
     return (int) $playerAnswer === $correctAnswer;
 }
 
-function getRoundData()
+function getRoundData(): array
 {
     $start = rand(MIN_START_VALUE, MAX_START_VALUE);
     $step = rand(MIN_STEP_VALUE, MAX_STEP_VALUE);
@@ -58,7 +58,7 @@ function getRoundData()
     ];
 }
 
-function run()
+function run(): void
 {
     runGameEngine(
         GAME_DESCRIPTION,

@@ -9,7 +9,7 @@ const ROUNDS_COUNT = 3;
 const MIN_NUMBER_VALUE = 1;
 const MAX_NUMBER_VALUE = 100;
 
-function isPrime($num)
+function isPrime(int $num): bool
 {
     if ($num < 2) {
         return false;
@@ -24,12 +24,12 @@ function isPrime($num)
     return true;
 }
 
-function isCorrectPlayerAnswer($playerAnswer, $correctAnswer)
+function isCorrectPlayerAnswer(string $playerAnswer, string $correctAnswer): bool
 {
     return $playerAnswer === $correctAnswer;
 }
 
-function getRoundData()
+function getRoundData(): array
 {
     $num = rand(MIN_NUMBER_VALUE, MAX_NUMBER_VALUE);
 
@@ -41,7 +41,7 @@ function getRoundData()
     ];
 }
 
-function run()
+function run(): void
 {
     runGameEngine(
         GAME_DESCRIPTION,

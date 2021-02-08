@@ -9,7 +9,7 @@ const ROUNDS_COUNT = 3;
 const MIN_NUMBER_VALUE = 1;
 const MAX_NUMBER_VALUE = 100;
 
-function calc($operation, $operand1, $operand2)
+function calc(string $operation, int $operand1, int $operand2): int
 {
     switch ($operation) {
         case '+':
@@ -28,12 +28,12 @@ function calc($operation, $operand1, $operand2)
     return $result;
 }
 
-function isCorrectPlayerAnswer($playerAnswer, $correctAnswer)
+function isCorrectPlayerAnswer(string $playerAnswer, int $correctAnswer): bool
 {
     return (int) $playerAnswer === $correctAnswer;
 }
 
-function getRoundData()
+function getRoundData(): array
 {
     $num1 = rand(MIN_NUMBER_VALUE, MAX_NUMBER_VALUE);
     $num2 = rand(MIN_NUMBER_VALUE, MAX_NUMBER_VALUE);
@@ -49,7 +49,7 @@ function getRoundData()
     ];
 }
 
-function run()
+function run(): void
 {
     runGameEngine(
         GAME_DESCRIPTION,

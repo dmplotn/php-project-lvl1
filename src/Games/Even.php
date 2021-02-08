@@ -9,17 +9,17 @@ const ROUNDS_COUNT = 3;
 const MIN_NUMBER_VALUE = 1;
 const MAX_NUMBER_VALUE = 100;
 
-function isEven($num)
+function isEven(int $num): bool
 {
     return $num % 2 === 0;
 }
 
-function isCorrectPlayerAnswer($playerAnswer, $correctAnswer)
+function isCorrectPlayerAnswer(string $playerAnswer, string $correctAnswer): bool
 {
     return $playerAnswer === $correctAnswer;
 }
 
-function getRoundData()
+function getRoundData(): array
 {
     $num = rand(MIN_NUMBER_VALUE, MAX_NUMBER_VALUE);
     $questionText = $num;
@@ -30,7 +30,7 @@ function getRoundData()
     ];
 }
 
-function run()
+function run(): void
 {
     runGameEngine(
         GAME_DESCRIPTION,
